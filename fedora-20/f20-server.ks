@@ -59,8 +59,6 @@ man
 vim
 deltarpm
 yum-plugin-fastestmirror
-realmd
-oddjob-mkhomedir
 net-tools
 -dracut-config-rescue
 -fprintd-pam
