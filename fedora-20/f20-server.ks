@@ -27,7 +27,7 @@ firewall --disabled
 timezone --utc Etc/UTC
 
 # Authentication
-rootpw --sshenabled --iscrypted $6$rounds=100000$ErgueCvvAHyt4cDv$TMHl2Rz6MNxfWatC2EK1arCEnP9mbVYA2X4UfZ5aX1i0dr2pKwKIyjitC3w0UG3MZ8sss.j57mWmoEzLFmhXa0
+rootpw --iscrypted $6$rounds=100000$ErgueCvvAHyt4cDv$TMHl2Rz6MNxfWatC2EK1arCEnP9mbVYA2X4UfZ5aX1i0dr2pKwKIyjitC3w0UG3MZ8sss.j57mWmoEzLFmhXa0
 # if you want to preset the root password in a public kickstart file, use SHA512crypt e.g.
 # rootpw --iscrypted $6$9dC4m770Q1o$FCOvPxuqc1B22HM21M5WuUfhkiQntzMuAV7MY0qfVcvhwNQ2L86PcnDWfjDd12IFxWtRiTuvO/niB0Q3Xpf2I.
 user --name=centos --password=enthought --plaintext --gecos="CentOS User" --shell=/bin/bash --groups=user,wheel
