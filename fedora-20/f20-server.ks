@@ -6,7 +6,7 @@
 install
 
 # Install from a friendly mirror and add updates
-url --url http://dfw.mirror.rackspace.com/fedora/releases/20/Everything/x86_64/os/
+url --url http://dfw.mirror.rackspace.com/fedora/releases/20/Fedora/x86_64/os/
 repo --name=updates
 
 # Language and keyboard setup
