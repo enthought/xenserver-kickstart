@@ -60,6 +60,7 @@ vim
 deltarpm
 yum-plugin-fastestmirror
 net-tools
+-realmd
 -dracut-config-rescue
 -fprintd-pam
 -wireless-tools
