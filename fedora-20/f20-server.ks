@@ -1,7 +1,7 @@
 # Fedora 20 Server kickstart for XenServer
 # branch: develop
 ##########################################
-
+# console=hvc0 utf8 nogpt noipv6 ks=https://raw.githubusercontent.com/enthought/xenserver-kickstart/develop/fedora-20/f20-server.ks
 # Install, not upgrade
 install
 
