@@ -6,7 +6,7 @@
 install
 
 # Install from a friendly mirror and add updates
-url --url http://us.archive.ubuntu.com/ubuntu/
+url --url http://dfw.mirror.rackspace.com/ubuntu/
 
 # Language and keyboard setup
 lang en_US

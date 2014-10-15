@@ -6,7 +6,7 @@
 install
 
 # Install from a friendly mirror and add updates
-url --mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-20&arch=$basearch
+url --url http://dfw.mirror.rackspace.com/fedora/releases/20/Everything/x86_64/os/
 repo --name=updates
 
 # Language and keyboard setup
@@ -27,13 +27,16 @@ firewall --disabled
 timezone --utc Etc/UTC
 
 # Authentication
-rootpw Asdfqwerty
+rootpw --sshenabled --iscrypted $6$rounds=100000$ErgueCvvAHyt4cDv$TMHl2Rz6MNxfWatC2EK1arCEnP9mbVYA2X4UfZ5aX1i0dr2pKwKIyjitC3w0UG3MZ8sss.j57mWmoEzLFmhXa0
 # if you want to preset the root password in a public kickstart file, use SHA512crypt e.g.
 # rootpw --iscrypted $6$9dC4m770Q1o$FCOvPxuqc1B22HM21M5WuUfhkiQntzMuAV7MY0qfVcvhwNQ2L86PcnDWfjDd12IFxWtRiTuvO/niB0Q3Xpf2I.
+user --name=centos --password=enthought --plaintext --gecos="CentOS User" --shell=/bin/bash --groups=user,wheel
+# if you want to preset the user password in a public kickstart file, use SHA512crypt e.g.
+# user --name=centos --password=$6$9dC4m770Q1o$FCOvPxuqc1B22HM21M5WuUfhkiQntzMuAV7MY0qfVcvhwNQ2L86PcnDWfjDd12IFxWtRiTuvO/niB0Q3Xpf2I. --iscrypted --gecos="CentOS User" --shell=/bin/bash --groups=user,wheel
 authconfig --enableshadow --passalgo=sha512
 
 # SELinux enabled
-selinux --enforcing
+selinux --permissive
 
 # Disable anything graphical
 skipx
@@ -43,7 +46,7 @@ text
 zerombr
 clearpart --all --drives=xvda
 part /boot --fstype=ext3 --size=500 --asprimary
-part / --fstype=ext4 --grow --size=1024 --asprimary
+part / --fstype=xfs --grow --size=1024 --asprimary
 bootloader --timeout=5 --driveorder=xvda --append="console=hvc0"
 
 # Shutdown when the kickstart is done
